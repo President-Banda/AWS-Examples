@@ -1,0 +1,18 @@
+#!/bin/bash
+
+echo "==create bucket=="
+
+# Check for an argument to the script
+if [ $# -eq 0 ]; then
+    echo "No bucket name provided"
+    exit 1
+fi
+
+BUCKET_NAME=$1
+
+# https://awscli.amazonaws.com/v2/documentation/api/latest/reference/s3api/create-bucket.html 
+aws s3api create-bucket \
+--bucket $BUCKET_NAME \
+--create-bucket-configuration="LocationConstraint=ca-central-1" \
+--query Location \
+--output text
