@@ -26,3 +26,4 @@ $fileContent = 'Hello President!'
 Set-Content -Path $fileName -Value $fileContent
 
 Write-S3Object -BucketName $bucketName -File $fileName -Key $fileName
+
