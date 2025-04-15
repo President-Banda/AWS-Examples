@@ -1,0 +1,11 @@
+name: s3-iac
+description: a simple iac script to create an S3 bucket with IAC
+runtime:
+  name: python
+  options:
+    toolchain: pip
+    virtualenv: venv
+config:
+  pulumi:tags:
+    value:
+      pulumi:template: aws-python
